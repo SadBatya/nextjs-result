@@ -7,24 +7,24 @@ export async function generateStaticParams() {
     "https://jsonplaceholder.typicode.com/posts"
   ).then((res) => res.json());
   return posts.map((post) => ({
-    id: String(post.id),
+    slug: String(post.id),
   }));
 }
 
 export default async function Page({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { id } = await params;
+  const { slug } = await params;
 
   const post: Post = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
+    `https://jsonplaceholder.typicode.com/posts/${slug}`
   ).then((res) => res.json());
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold">{post.title}</h1>
+    <div className="flex flex-col gap-4 p-4 text-center w-screen h-screen justify-center items-center">
+      <h1 className="text-4xl font-semibold">{post.title}</h1>
       <p className="text-white/50">{post.body}</p>
     </div>
   );
