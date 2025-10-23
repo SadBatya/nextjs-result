@@ -1,2 +1,2 @@
-export { getPhotos } from "./get-photos";
-export { getPhoto } from "./get-photo";
+export { getPosts } from "./get-posts";
+export { getPost } from "./get-post";
