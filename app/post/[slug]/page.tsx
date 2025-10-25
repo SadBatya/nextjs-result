@@ -25,7 +25,7 @@ export default async function Page({
   return (
     <div className="flex flex-col gap-4 p-4 text-center w-screen h-screen justify-center items-center">
       <h1 className="text-4xl font-semibold">{post.title}</h1>
-      <p className="text-white/50">{post.body}</p>
+      <p className="text-white/50 text-xl">{post.body}</p>
     </div>
   );
 }
