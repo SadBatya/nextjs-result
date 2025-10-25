@@ -25,7 +25,6 @@ export const SearchInput = () => {
   return (
     <input
       onChange={(e) => setSearchValue(e.target.value)}
-      // defaultValue={searchParams.get("search")?.toString()}
       value={searchValue}
       className="px-4 py-2 rounded-md border border-white/30 focus:border-white/80 transition-all"
       type="text"
