@@ -7,7 +7,7 @@ import { useEffect, useState, useMemo } from "react";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function Page() {
+export const PostList = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const searchParams = useSearchParams();
   const searchValue = searchParams.get("search")?.toString();
@@ -35,6 +35,14 @@ export default function Page() {
           <PostCard key={id} id={id} title={title} />
         ))}
       </div>
+    </Suspense>
+  );
+};
+
+export default function Page() {
+  return (
+    <Suspense fallback={"Loading..."}>
+      <PostList />
     </Suspense>
   );
 }
